@@ -10,5 +10,5 @@ spec:
     services.loadbalancers: 0
     services.nodeports: 0
     configmaps: 10
-    resourcequotas: 1
+    resourcequotas: 3
     persistentvolumeclaims: 10
