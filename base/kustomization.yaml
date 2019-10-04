@@ -2,6 +2,13 @@ namespace: $(NAMESPACE)
 commonLabels:
   environment: dev
 resources:
+#Include all RoleBinding here
+
+#Include All quota policies
 - quota/compute-quota.yaml
 - quota/storage-quota.yaml
 - quota/object-quota.yaml
+
+#Include ingress template 
+- ingress/example-ingress-rule.yaml
+

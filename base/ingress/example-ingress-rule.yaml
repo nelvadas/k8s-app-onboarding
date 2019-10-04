@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+  name: example-ingress-rule
+spec:
+  tls:
+  - {}
+  rules:
+  - host: example.apps.dev01.dockernetes.org
+    http:
+      paths:
+      - backend:
+          serviceName: nginx
+          servicePort: 80

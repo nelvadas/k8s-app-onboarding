@@ -2,7 +2,7 @@
 
 This document describes a practical guide to onboard applications on a kubernetes based Platform.
 it explores a way for cluster maintenance team to  automatically create and initialize  application namespaces with custom policies before handling over the namespace to an application team.  
-This process relies on [kustomize](https://github.com/kubernetes-sigs/kustomize) and sed commmand to procude ready to go Yaml files for your namespaces.
+This process relies on [kustomize](https://github.com/kubernetes-sigs/kustomize) and sed commmand to produce  the final YAML files for your namespaces.
 
 
 
@@ -116,7 +116,8 @@ spec:
    elastifile.storageclass.storage.k8s.io/persistentvolumeclaims: 3
    pd-standard.storageclass.storage.k8s.io/requests.storage: 6Gi
    ssd-regional.storageclass.storage.k8s.io/persistentvolumeclaims: 7
-   ```
+
+```
 
 
 ### Object quotas
@@ -140,7 +141,7 @@ spec:
     persistentvolumeclaims: 10
 
 ```
-For services, if an ingress controller is setup, the cluster should restrict `loadbalancer` and `nodeports` Services 
+For services, if an ingress controller is setup, the cluster should restrict `loadbalancer` and `nodeports` Services
 
 ### Limit Ranges
 ResourceQuota works at a namespace level, you can control resource request/limits at Pod/Container Level using `LimitRange`
@@ -149,13 +150,21 @@ unless you have a very specific and generic policy to apply at `Pod/ContainerWh 
 
 ## Network Policies
 
-### Default deny all Rule  
+Check the policies defined [here](https://medium.com/@nicolakabar/7-practical-steps-to-onboard-your-teams-into-docker-enterprise-3-0-5d77548de9c0)
 
-### Allow intra namespace communications  
-
-### Allow flows from ingress namepasces to application namespaces
+1. Default deny all Rule  
+2. Allow intra namespace communications  
+3. Allow flows from ingress controller namespace to applications namespaces
 
 ## Pod Securities policies  
 
 
 ## Ingress Rules
+Inject a template Ingress resource file in the namespace for reference.
+Application will rely on this Ingress resource to build their own.
+
+```
+$ kubectl get ingress
+NAME                   HOSTS                                ADDRESS   PORTS     AGE
+example-ingress-rule   example.apps.dev01.dockernetes.org             80, 443   28s
+```
