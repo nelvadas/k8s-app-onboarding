@@ -6,12 +6,12 @@ This process relies on [kustomize](https://github.com/kubernetes-sigs/kustomize)
 
 
 
-1. Namespace Setup
-2. RBAC
+1. Namespace Constraints
+2. RBAC: RoleBinding
 3. ResourceQuota
 4. Network Policies
-5. Pod Security Policies
-6. Ingress Rules Templates
+5. Ingress Rules Templates
+6. Pod Security Policies
 
 
 ## Namespace Constraints
@@ -156,7 +156,6 @@ The most important thing to remember here is that you should have three rules
 2. A rule to Allow intra namespace communications : Pod of the same namespace should be able to communicate  
 3. Ingress to App communications: Allow flows from ingress controller namespace to applications namespaces
 
-## Pod Securities policies  
 
 
 ## Ingress Rules
@@ -168,3 +167,6 @@ $ kubectl get ingress
 NAME                   HOSTS                                ADDRESS   PORTS     AGE
 example-ingress-rule   example.apps.dev01.dockernetes.org             80, 443   28s
 ```
+
+## Pod Securities policies  
+PSP are cluster wide resource and they sould be initalized before creating namespaces.
