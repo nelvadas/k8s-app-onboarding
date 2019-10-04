@@ -146,7 +146,7 @@ For services, if an ingress controller is setup, the cluster should restrict `lo
 ### Limit Ranges
 ResourceQuota works at a namespace level, you can control resource request/limits at Pod/Container Level using `LimitRange`
 LimitRange require a deep knowledge of the application details, the recommendation here will be to leave this step to the hand of the application team
-unless you have a very specific and generic policy to apply at `Pod/ContainerWh level in all namespaces.
+unless you have a very specific and generic policy to apply at `Pod/Container` level in all namespaces.
 
 ## Network Policies
 
