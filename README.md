@@ -138,7 +138,9 @@ spec:
     configmaps: 10
     resourcequotas: 3
     persistentvolumeclaims: 10
-    ```
+
+```
+For services, if an ingress controller is setup, the cluster should restrict `loadbalancer` and `nodeports` Services 
 
 ### Limit Ranges
 ResourceQuota works at a namespace level, you can control resource request/limits at Pod/Container Level using `LimitRange`
