@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: object-quota
+spec:
+  hard:
+    pods: 20
+    replicationcontrollers: 10
+    services: 10
+    services.loadbalancers: 0
+    services.nodeports: 0
+    configmaps: 10
+    resourcequotas: 1
+    persistentvolumeclaims: 10

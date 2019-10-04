@@ -1,0 +1,9 @@
+namespace: demo33
+commonLabels:
+  environment: dev
+commonAnnotations:
+  scheduler.alpha.kubernetes.io/node-selector: "role=apps"
+resources:
+- namespace.yaml
+- quota/compute-quota.yaml
+

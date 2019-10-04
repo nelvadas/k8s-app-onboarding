@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: storage-quota
+spec:
+  hard:
+    requests.storage: "10Gi"
+    requests.ephemeral-storage: "2Gi"
+    
+    limits.ephemeral-storage: "3Gi'
+
+    myStorageClass1.storageclass.storage.k8s.io/requests.storage: 4Gi
+    myStorageClass1.storageclass.storage.k8s.io/persistentvolumeclaims: 3
+    myStorageClass2.storageclass.storage.k8s.io/requests.storage: 6Gi
+    myStorageClass2.storageclass.storage.k8s.io/persistentvolumeclaims: 7

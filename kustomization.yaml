@@ -1,0 +1,10 @@
+commonLabels:
+  environment: dev
+  organization: IT
+  applicationn: fdp
+  size: S
+commonAnnotations:
+  scheduler.alpha.kubernetes.io/node-selector: "role=apps"
+resources:
+- namespace.yaml
+
