@@ -49,15 +49,21 @@ commonAnnotations:
   scheduler.alpha.kubernetes.io/node-selector: "role=apps"
 resources:
 - namespace.yaml
+```
 
- define by the can be created using the following command
+Run the following command to create the namespace
+
 ```
 $ kustomize build . | sed -e 's/$(NAMESPACE)/fdp-1234-dev-01/g' | kubectl apply -f  -
 namespace/fdp-1234-dev-01 created
 ```
 
 
+
 ## RBAC
+1. Define a rolebinding to assign admin role on the namespace to the application Owner
+2. Define a rolebinding to assign view role on the namespace to the application LDAP Group
+3. Define a rolebinding to assign the edit role to the cicd service account on this namespace
 
 
 ## Quota policies
@@ -69,7 +75,9 @@ $ kustomize build base | sed -e 's/$(NAMESPACE)/fdp-1234-dev-01/g' | kubectl app
 resourcequota/compute-quota created
 resourcequota/object-quota created
 resourcequota/storage-quota created
+
 ```
+
 
 ### Compute quotas
 
