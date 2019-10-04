@@ -150,11 +150,11 @@ unless you have a very specific and generic policy to apply at `Pod/Container` l
 
 ## Network Policies
 
-Check the policies defined [here](https://medium.com/@nicolakabar/7-practical-steps-to-onboard-your-teams-into-docker-enterprise-3-0-5d77548de9c0)
-
-1. Default deny all Rule  
-2. Allow intra namespace communications  
-3. Allow flows from ingress controller namespace to applications namespaces
+Nicolas Kabar wrote a nice blog post on network policies  [ check the post here ](https://medium.com/@nicolakabar/7-practical-steps-to-onboard-your-teams-into-docker-enterprise-3-0-5d77548de9c0)
+The most important thing to remember here is that you should have three rules
+1. Default deny Rule that deny all communications by default
+2. A rule to Allow intra namespace communications : Pod of the same namespace should be able to communicate  
+3. Ingress to App communications: Allow flows from ingress controller namespace to applications namespaces
 
 ## Pod Securities policies  
 
