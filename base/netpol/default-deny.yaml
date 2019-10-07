@@ -1,0 +1,8 @@
+# Deny All Network Policy for the Blue Namespace
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: default-deny
+spec:
+  podSelector: {}
+  matchLabels: {}

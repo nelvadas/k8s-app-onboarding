@@ -9,6 +9,11 @@ resources:
 - quota/storage-quota.yaml
 - quota/object-quota.yaml
 
+#Network policies files
+- netpol/default-deny.yaml
+- netpol/allow-intra-namespace.yaml
+- netpol/allow-ingress-traffic.yaml
+
 #Include ingress template 
 - ingress/example-ingress-rule.yaml
 
